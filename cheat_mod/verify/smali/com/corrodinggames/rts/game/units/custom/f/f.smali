@@ -1,0 +1,139 @@
+.class public final Lcom/corrodinggames/rts/game/units/custom/f/f;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# direct methods
+.method public static a(Ljava/lang/String;)V
+    .registers 3
+
+    .prologue
+    .line 344
+    .line 346
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    if-nez v0, :cond_e
+
+    .line 348
+    new-instance v0, Lcom/corrodinggames/rts/game/units/custom/ch;
+
+    const-string v1, "name cannot be empty"
+
+    invoke-direct {v0, v1}, Lcom/corrodinggames/rts/game/units/custom/ch;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 351
+    :cond_e
+    const-string v0, " "
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_56
+
+    const-string v0, "}"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_56
+
+    const-string v0, "$"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_56
+
+    const-string v0, "."
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_56
+
+    const-string v0, "{"
+
+    .line 352
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_56
+
+    const-string v0, "-"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_56
+
+    const-string v0, "+"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_56
+
+    const-string v0, ":"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_56
+
+    const-string v0, "("
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5e
+
+    .line 354
+    :cond_56
+    new-instance v0, Lcom/corrodinggames/rts/game/units/custom/ch;
+
+    const-string v1, "invalid character in name"
+
+    invoke-direct {v0, v1}, Lcom/corrodinggames/rts/game/units/custom/ch;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 357
+    :cond_5e
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Character;->isDigit(C)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_71
+
+    .line 359
+    new-instance v0, Lcom/corrodinggames/rts/game/units/custom/ch;
+
+    const-string v1, "name cannot start with a digit"
+
+    invoke-direct {v0, v1}, Lcom/corrodinggames/rts/game/units/custom/ch;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 362
+    :cond_71
+    return-void
+.end method

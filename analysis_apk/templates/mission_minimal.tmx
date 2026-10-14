@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="2" height="2" tilewidth="20" tileheight="20" infinite="0" nextlayerid="4" nextobjectid="10">
+ <tileset firstgid="1" source="../jadx_out/resources/assets/tilesets/terrain/Dirt.tsx"/>
+ <layer id="1" name="Ground" width="2" height="2">
+  <data encoding="base64" compression="gzip">
+   H4sIAIY2umkAA2NkYGBgRMIAUPFgrRAAAAA=
+  </data>
+ </layer>
+ <layer id="2" name="Items" width="2" height="2">
+  <data encoding="base64" compression="gzip">
+   H4sIAJE2umkAA2NgQAUAVUu77BAAAAA=
+  </data>
+ </layer>
+ <objectgroup id="3" name="Triggers">
+  <object id="1" name="map_info" x="0" y="0" width="100" height="60">
+   <properties>
+    <property name="fog" value="map"/>
+    <property name="introText" value="Replace this with your mission briefing."/>
+    <property name="type" value="mission"/>
+    <property name="winCondition" value="requiredObjectives"/>
+   </properties>
+  </object>
+  <object id="2" name="team_0_info" type="team_info" x="0" y="70" width="100" height="40">
+   <properties>
+    <property name="credits" value="8000"/>
+    <property name="team" value="0"/>
+   </properties>
+  </object>
+  <object id="3" name="team_1_info" type="team_info" x="110" y="70" width="100" height="40">
+   <properties>
+    <property name="credits" value="6000"/>
+    <property name="team" value="1"/>
+   </properties>
+  </object>
+  <object id="4" name="target_1" type="point" x="20" y="20" width="20" height="20"/>
+  <object id="5" name="baseGone" type="unitDetect" x="0" y="0" width="40" height="40">
+   <properties>
+    <property name="id" value="baseGone"/>
+    <property name="team" value="1"/>
+    <property name="maxUnits" value="0"/>
+    <property name="onlyMainBuildings" value="true"/>
+    <property name="globalMessage" value="Enemy base wiped out"/>
+    <property name="globalMessage_delayPerChar" value="slow"/>
+    <property name="showOnMap" value="true"/>
+   </properties>
+  </object>
+  <object id="6" name="obj_baseGone" type="objective" x="0" y="50" width="80" height="20">
+   <properties>
+    <property name="activatedBy" value="baseGone"/>
+    <property name="team" value="0"/>
+    <property name="text" value="Enemy base wiped out"/>
+   </properties>
+  </object>
+  <object id="7" name="buildHint" type="mapText" x="20" y="20" width="10" height="10">
+   <properties>
+    <property name="delay" value="15s"/>
+    <property name="deactivatedBy" value="baseGone"/>
+    <property name="style" value="arrow"/>
+    <property name="text" value="Replace with your hint text"/>
+    <property name="textColor" value="#DDdbdbdb"/>
+    <property name="textOffsetY" value="-20"/>
+   </properties>
+  </object>
+  <object id="8" name="reinforcementDrop" type="unitAdd" x="20" y="20" width="10" height="10">
+   <properties>
+    <property name="activatedBy" value="baseGone"/>
+    <property name="spawnUnits" value="flare_10s"/>
+    <property name="team" value="0"/>
+    <property name="warmup" value="1s"/>
+   </properties>
+  </object>
+  <object id="9" name="move_team_1" type="move" x="0" y="0" width="40" height="40">
+   <properties>
+    <property name="delay" value="5s"/>
+    <property name="target" value="target_1"/>
+    <property name="team" value="1"/>
+    <property name="unload" value=""/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

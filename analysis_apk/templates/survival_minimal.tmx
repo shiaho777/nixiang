@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="2" height="2" tilewidth="20" tileheight="20" infinite="0" nextlayerid="4" nextobjectid="8">
+ <tileset firstgid="1" source="../jadx_out/resources/assets/tilesets/terrain/Dirt.tsx"/>
+ <layer id="1" name="Ground" width="2" height="2">
+  <data encoding="base64" compression="gzip">
+   H4sIAIY2umkAA2NkYGBgRMIAUPFgrRAAAAA=
+  </data>
+ </layer>
+ <layer id="2" name="Items" width="2" height="2">
+  <data encoding="base64" compression="gzip">
+   H4sIAJE2umkAA2NgQAUAVUu77BAAAAA=
+  </data>
+ </layer>
+ <objectgroup id="3" name="Triggers">
+  <object id="1" name="map_info" x="0" y="0" width="120" height="70">
+   <properties>
+    <property name="fog" value="map"/>
+    <property name="introText" value="See how long you can survive&#10;Your command center must not be destroyed"/>
+    <property name="loseCondition" value="commandCenter"/>
+    <property name="type" value="survival"/>
+    <property name="winCondition" value="none"/>
+   </properties>
+  </object>
+  <object id="2" name="team_0_info" type="team_info" x="0" y="80" width="100" height="40">
+   <properties>
+    <property name="credits" value="2000"/>
+    <property name="team" value="0"/>
+   </properties>
+  </object>
+  <object id="3" name="team_1_info" type="team_info" x="110" y="80" width="100" height="40">
+   <properties>
+    <property name="ai" value="survival"/>
+    <property name="credits" value="1000"/>
+    <property name="team" value="1"/>
+   </properties>
+  </object>
+  <object id="4" name="attack_point" x="0" y="0" width="20" height="20"/>
+  <object id="5" name="attack_point" x="20" y="0" width="20" height="20"/>
+  <object id="6" name="attack_point" x="0" y="20" width="20" height="20"/>
+  <object id="7" name="attack_point" x="20" y="20" width="20" height="20"/>
+ </objectgroup>
+</map>
